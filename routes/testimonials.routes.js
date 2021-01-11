@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('./../db');
+const { v4: uuidv4 } = require('uuid');
 
 
 router.route('/testimonials/random').get((req, res) => {
@@ -13,7 +14,7 @@ router.route('/testimonials').get((req, res) => {
 })
 
 router.route('/testimonials/:id').get((req, res) => {
-    const pickedBook = db.testimonials.filter(book => book.id == req.params.id)
+    const pickedBook = db.testimonials.find(book => book.id == req.params.id)
     res.json(pickedBook)    
 })
 

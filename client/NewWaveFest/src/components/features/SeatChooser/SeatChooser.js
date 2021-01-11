@@ -11,15 +11,6 @@ class SeatChooser extends React.Component {
     loadSeats();
   }
 
-  componentWillUnmount() {
-    clearInterval(this.reservationRefresher)
-  }
-
-  reservationRefresher = setInterval(() => {
-    loadSeats()
-    console.log('lol')
-  }, 12000)
-
   isTaken = (seatId) => {
     const { seats, chosenDay } = this.props;
 

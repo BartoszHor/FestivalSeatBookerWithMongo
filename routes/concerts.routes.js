@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const db = require('./../db');
+const { v4: uuidv4 } = require('uuid');
 
 router.route('/concerts').get((req, res) => {
 res.send(db.concerts) 
 })
 
 router.route('/concerts/:id').get((req, res) => {
-    const pickedConcert = db.concerts.filter(concert => concert.id == req.params.id)
+    const pickedConcert = db.concerts.find(concert => concert.id == req.params.id)
     res.send(pickedConcert)    
 })
 

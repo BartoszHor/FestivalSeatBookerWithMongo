@@ -14,6 +14,20 @@ class OrderTicketForm extends React.Component {
       seat: '',
     },
     isError: false,
+    interval: null,
+  }
+
+  componentDidMount() {
+    const { loadSeats } = this.props;
+    const interval = setInterval(()=> {
+      loadSeats();
+    }, 120000);
+    this.setState({interval: interval})
+  }
+
+  componentWillUnmount() {
+    const interval = this.state.interval
+    this.setState({interval: clearInterval(interval)})
   }
 
   updateSeat = (e, seatId) => {
@@ -26,6 +40,7 @@ class OrderTicketForm extends React.Component {
   updateTextField = ({ target }) => {
     const { order } = this.state;
     const { value, name } = target;
+    console.log(name, value)
 
     this.setState({ order: { ...order, [name]: value }});
   }
@@ -44,9 +59,8 @@ class OrderTicketForm extends React.Component {
     e.preventDefault();
 
     if(order.client && order.email && order.day && order.seat) {
-      console.log('dziala')
-      loadSeats()
       addSeat(order);
+      loadSeats();
       this.setState({ 
         order: {
           client: '',
