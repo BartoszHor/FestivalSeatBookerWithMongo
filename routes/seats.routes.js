@@ -25,6 +25,8 @@ router.route('/seats').post((req, res) => {
           client: client,
           email: email,
       });
+
+      req.io.emit('seatsUpdated', db.seats) 
       res.send({ message: 'OK' });
   } else {
       res.status(409).json({message: "The slot is already taken..."});

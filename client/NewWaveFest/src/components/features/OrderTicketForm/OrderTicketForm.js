@@ -14,20 +14,10 @@ class OrderTicketForm extends React.Component {
       seat: '',
     },
     isError: false,
-    interval: null,
   }
 
   componentDidMount() {
-    const { loadSeats } = this.props;
-    const interval = setInterval(()=> {
-      loadSeats();
-    }, 120000);
-    this.setState({interval: interval})
-  }
-
-  componentWillUnmount() {
-    const interval = this.state.interval
-    this.setState({interval: clearInterval(interval)})
+    console.log('next task done')
   }
 
   updateSeat = (e, seatId) => {
@@ -40,7 +30,6 @@ class OrderTicketForm extends React.Component {
   updateTextField = ({ target }) => {
     const { order } = this.state;
     const { value, name } = target;
-    console.log(name, value)
 
     this.setState({ order: { ...order, [name]: value }});
   }
