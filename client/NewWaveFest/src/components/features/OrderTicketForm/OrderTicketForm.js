@@ -18,7 +18,7 @@ class OrderTicketForm extends React.Component {
 
   componentDidMount() {
     console.log('next task done')
-  }
+  } 
 
   updateSeat = (e, seatId) => {
     const { order } = this.state;
@@ -28,8 +28,10 @@ class OrderTicketForm extends React.Component {
   }
 
   updateTextField = ({ target }) => {
+    console.log(target)
     const { order } = this.state;
     const { value, name } = target;
+
 
     this.setState({ order: { ...order, [name]: value }});
   }
@@ -43,13 +45,12 @@ class OrderTicketForm extends React.Component {
 
   submitForm = async (e) => {
     const { order } = this.state;
-    const { addSeat, loadSeats } = this.props;
+    const { addSeat } = this.props;
 
     e.preventDefault();
 
     if(order.client && order.email && order.day && order.seat) {
       addSeat(order);
-      loadSeats();
       this.setState({ 
         order: {
           client: '',

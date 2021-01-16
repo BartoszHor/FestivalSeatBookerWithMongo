@@ -26,10 +26,8 @@ export const loadSeats = payload => ({ payload, type: LOAD_SEATS });
 export const addSeat = payload => ({ payload, type: ADD_SEAT });
 
 /* THUNKS */
-
 export const loadSeatsRequest = () => {
   return async dispatch => {
-
     dispatch(startRequest({ name: 'LOAD_SEATS' }));
     try {
 
