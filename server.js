@@ -5,7 +5,7 @@ const app = express()
 const socket = require('socket.io');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/newWaveDB', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://BartoszHoroba:newwaveapp123@cluster0.ltq2j.mongodb.net/newWaveDB?retryWrites=true&w=majority', { useNewUrlParser: true });
 const db = mongoose.connection;
 
 db.once('open', () => {
