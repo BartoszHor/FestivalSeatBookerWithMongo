@@ -9,6 +9,7 @@
     "test:watch": "onchange \"./**/*.js\" -i -k -- yarn test"
   },
   "dependencies": {
+    "aws-sdk": "^2.841.0",
     "chai": "4.2.0",
     "chai-http": "4.3.0",
     "cors": "^2.8.5",

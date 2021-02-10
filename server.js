@@ -5,7 +5,9 @@ const app = express()
 const socket = require('socket.io');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://BartoszHoroba:newwaveapp123@cluster0.ltq2j.mongodb.net/newWaveDB?retryWrites=true&w=majority', { useNewUrlParser: true });
+const dbURI = process.env.NODE_ENV === 'production' ? `mongodb+srv://${process.env.GITHUB_USERNAME}:${process.env.PASSWORD}@cluster0.g9pgz.mongodb.net/new_wave?retryWrites=true&w=majority` : 'mongodb://localhost:27017/newWaveDB';
+
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
 db.once('open', () => {
