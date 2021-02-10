@@ -4486,7 +4486,7 @@ snyk-php-plugin@1.6.4:
     "@snyk/composer-lockfile-parser" "1.0.3"
     tslib "1.9.3"
 
-snyk-poetry-lockfile-parser@^1.1.2:
+snyk-poetry-lockfile-parser@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/snyk-poetry-lockfile-parser/-/snyk-poetry-lockfile-parser-1.1.4.tgz#41d788f3d53a54971d86f1c244e303dd4d287bc5"
   integrity sha512-sH0B3LYu1AiMCxswpNPn7clDda/9SEwDcghQyZbT+YViqdnFrUvxbd9wUn0TAwYTVu6+dXfDKOzB8MKBupJ8TQ==
@@ -4513,12 +4513,12 @@ snyk-policy@1.13.5:
     then-fs "^2.0.0"
 
 snyk-python-plugin@^1.13.3:
-  version "1.19.2"
-  resolved "https://registry.yarnpkg.com/snyk-python-plugin/-/snyk-python-plugin-1.19.2.tgz#b274794a216dce7c57797c8f94f95c781e2e883c"
-  integrity sha512-n5Z7WiMTNtrBaDE9blnYVoX5fyXeMVhDNrQ/q21lHRAvDKDCY9tNNfduUjOVG6HbIH89mW8lLUdBNAMu/hpl+Q==
+  version "1.19.3"
+  resolved "https://registry.yarnpkg.com/snyk-python-plugin/-/snyk-python-plugin-1.19.3.tgz#877dafe627bf9e3412438343715f083ede74d811"
+  integrity sha512-nDX3DgYFZ6nF78igjkr772tNFvlyt0OnLJCvYTOB8BsTpsJLozEgHF0t4LGT3wABly00WIxn6PzOl0qcdT7a/Q==
   dependencies:
     "@snyk/cli-interface" "^2.0.3"
-    snyk-poetry-lockfile-parser "^1.1.2"
+    snyk-poetry-lockfile-parser "^1.1.4"
     tmp "0.0.33"
 
 snyk-resolve-deps@4.4.0:
