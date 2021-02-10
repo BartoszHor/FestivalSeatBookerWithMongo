@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon server.js",
+    "build": "react-scripts build",
     "test": "mocha \"./{,!(node_modules|client)/**/}*.test.js\"",
     "test:watch": "onchange \"./**/*.js\" -i -k -- yarn test"
   },
@@ -15,13 +16,16 @@
     "cors": "^2.8.5",
     "es6-promise": "^4.2.8",
     "express": "4.17.1",
+    "helmet": "3.21.1",
     "mocha": "6.2.1",
+    "mongo-sanitize": "1.0.1",
     "mongodb": "3.3.2",
     "mongodb-memory-server": "^6.9.3",
     "mongoose": "5.7.1",
     "nock": "^13.0.7",
     "nodemon": "^1.19.1",
     "onchange": "6.1.0",
+    "snyk": "1.235.0",
     "socket.io": "^3.0.5",
     "uuid": "^8.3.2"
   },

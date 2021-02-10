@@ -4,6 +4,8 @@ const path = require('path');
 const app = express()
 const socket = require('socket.io');
 const mongoose = require('mongoose');
+const helmet = require('helmet');
+
 
 const dbURI = process.env.NODE_ENV === 'production' ? `mongodb+srv://${process.env.GITHUB_USERNAME}:${process.env.PASSWORD}@cluster0.g9pgz.mongodb.net/new_wave?retryWrites=true&w=majority` : 'mongodb://localhost:27017/newWaveDB';
 
@@ -34,6 +36,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 app.use(cors());
